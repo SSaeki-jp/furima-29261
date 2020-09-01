@@ -38,6 +38,11 @@ Things you may want to cover:
 | firstname_fullwidth_katakana | string | null: false |
 | birthday                     | date   | null: false |
 
+### Association
+
+- has_many :products
+- has_many :orders
+
 
 ## Products テーブル
 
@@ -54,6 +59,11 @@ Things you may want to cover:
 | favorite_flag              | boolean | null: false |
 | price                      | integer | null: false |
 
+### Association
+
+- has_many :comments
+- belong_to :orders
+
 
 ## Comments テーブル
 
@@ -61,6 +71,11 @@ Things you may want to cover:
 | ---------- | ------- | ----------- |
 | comment    | text    | null: false |
 | product_id | integer | null: false |
+| user_id    | integer | null: false |
+
+### Association
+
+- belong_to :products
 
 
 ## SendingAddress テーブル
@@ -75,6 +90,10 @@ Things you may want to cover:
 | phone_number  | string  | null: false |
 | user_id       | integer | null: false |
 
+### Association
+
+- belong_to :orders
+
 
 ## Orders テーブル
 
@@ -84,21 +103,17 @@ Things you may want to cover:
 | product_id         | integer | null: false |
 | sending_address_id | integer | null: false |
 
+### Association
+
+- has_one :products
+- has_one :sending_address
+
 
 ## Prefectures アクティブハッシュ
 
 | Column          | Type   | Options     |
 | --------------- | ------ | ----------- |
 | prefecture_name | string | null: false |
-
-
-## Birthday アクティブハッシュ（JavaScriptで実現する場合不要）
-
-| Column        | Type    | Options     |
-| ------------- | ------- | ----------- |
-| year_of_birth | integer | null: false |
-| birth_month   | integer | null: false |
-| birth_day     | integer | null: false |
 
 
 ## Categorys アクティブハッシュ
@@ -127,12 +142,3 @@ Things you may want to cover:
 | Column                  | Type   | Options     |
 | ----------------------- | ------ | ----------- |
 | estimated_shipping_date | string | null: false |
-
-
-
-
-### Association
-
-- has_many :room_users
-- has_many :rooms, through: room_users
-- has_many :messages

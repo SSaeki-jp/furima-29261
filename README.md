@@ -42,7 +42,7 @@ Things you may want to cover:
 
 - has_many  :products
 - has_many  :orders
-- belong_to :orders
+- belong_to :products
 
 
 ## Products テーブル

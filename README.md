@@ -105,5 +105,6 @@ Things you may want to cover:
 
 ### Association
 
-- has_one :product
-- has_one :sending_address
+- has_one    :product
+- has_one    :sending_address
+- belongs_to :user

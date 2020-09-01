@@ -42,7 +42,6 @@ Things you may want to cover:
 
 - has_many  :products
 - has_many  :orders
-- belong_to :products
 
 
 ## Products テーブル
@@ -62,22 +61,22 @@ Things you may want to cover:
 
 ### Association
 
-- has_many  :comments
-- has_one   :users
-- belong_to :orders
+- has_many   :comments
+- has_one    :order
+- belongs_to :user
 
 
 ## Comments テーブル
 
-| Column     | Type    | Options     |
-| ---------- | ------- | ----------- |
-| comment    | text    | null: false |
-| product_id | integer | null: false |
-| user_id    | integer | null: false |
+| Column     | Type    | Options           |
+| ---------- | ------- | ----------------- |
+| comment    | text    | null: false       |
+| product_id | integer | foreign_key: true |
+| user_id    | integer | foreign_key: true |
 
 ### Association
 
-- belong_to :products
+- belongs_to :product
 
 
 ## SendingAddress テーブル
@@ -85,26 +84,26 @@ Things you may want to cover:
 | Column        | Type    | Options     |
 | ------------- | ------- | ----------- |
 | postal_code   | string  | null: false |
-| prefecture_id | string  | null: false |
+| prefecture_id | integer | null: false |
 | city          | string  | null: false |
 | address       | string  | null: false |
-| building_name | string  | null: false |
+| building_name | string  |             |
 | phone_number  | string  | null: false |
 | user_id       | integer | null: false |
 
 ### Association
 
-- belong_to :orders
+- belongs_to :order
 
 
 ## Orders テーブル
 
-| Column             | Type    | Options     |
-| ------------------ | ------- | ----------- |
-| user_id            | integer | null: false |
-| product_id         | integer | null: false |
+| Column             | Type    | Options           |
+| ------------------ | ------- | ----------------- |
+| user_id            | integer | foreign_key: true |
+| product_id         | integer | foreign_key: true |
 
 ### Association
 
-- has_one :products
+- has_one :product
 - has_one :sending_address

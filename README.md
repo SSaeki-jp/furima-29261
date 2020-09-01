@@ -40,28 +40,30 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :products
-- has_many :orders
+- has_many  :products
+- has_many  :orders
+- belong_to :orders
 
 
 ## Products テーブル
 
-| Column                     | Type    | Options     |
-| -------------------------- | ------- | ----------- |
-| product_name               | string  | null: false |
-| image                      | string  | null: false |
-| user_id                    | integer | null: false |
-| category_id                | integer | null: false |
-| product_status_id          | integer | null: false |
-| shipping_charges_id        | integer | null: false |
-| prefecture_id              | integer | null: false |
-| estimated_shipping_date_id | integer | null: false |
-| favorite_flag              | boolean | null: false |
-| price                      | integer | null: false |
+| Column                     | Type    | Options           |
+| -------------------------- | ------- | ----------------- |
+| name                       | string  | null: false       |
+| image                      | string  | null: false       |
+| user_id                    | integer | foreign_key: true |
+| category_id                | integer | null: false       |
+| product_status_id          | integer | null: false       |
+| shipping_charges_id        | integer | null: false       |
+| prefecture_id              | integer | null: false       |
+| estimated_shipping_date_id | integer | null: false       |
+| favorite_flag              | boolean | null: false       |
+| price                      | integer | null: false       |
 
 ### Association
 
-- has_many :comments
+- has_many  :comments
+- has_one   :users
 - belong_to :orders
 
 
@@ -101,44 +103,8 @@ Things you may want to cover:
 | ------------------ | ------- | ----------- |
 | user_id            | integer | null: false |
 | product_id         | integer | null: false |
-| sending_address_id | integer | null: false |
 
 ### Association
 
 - has_one :products
 - has_one :sending_address
-
-
-## Prefectures アクティブハッシュ
-
-| Column          | Type   | Options     |
-| --------------- | ------ | ----------- |
-| prefecture_name | string | null: false |
-
-
-## Categorys アクティブハッシュ
-
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| Category | string | null: false |
-
-
-## ProductStatus アクティブハッシュ
-
-| Column         | Type   | Options     |
-| -------------- | ------ | ----------- |
-| product_status | string | null: false |
-
-
-## ShippingCharges アクティブハッシュ
-
-| Column           | Type   | Options     |
-| ---------------- | ------ | ----------- |
-| shipping_charges | string | null: false |
-
-
-## EstimatedShippingDate アクティブハッシュ
-
-| Column                  | Type   | Options     |
-| ----------------------- | ------ | ----------- |
-| estimated_shipping_date | string | null: false |

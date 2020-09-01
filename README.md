@@ -49,7 +49,6 @@ Things you may want to cover:
 | Column                     | Type    | Options           |
 | -------------------------- | ------- | ----------------- |
 | name                       | string  | null: false       |
-| image                      | string  | null: false       |
 | user_id                    | integer | foreign_key: true |
 | category_id                | integer | null: false       |
 | product_status_id          | integer | null: false       |
@@ -64,6 +63,7 @@ Things you may want to cover:
 - has_many   :comments
 - has_one    :order
 - belongs_to :user
+- has_one_attached :image
 
 
 ## Comments テーブル
@@ -81,15 +81,16 @@ Things you may want to cover:
 
 ## SendingAddress テーブル
 
-| Column        | Type    | Options     |
-| ------------- | ------- | ----------- |
-| postal_code   | string  | null: false |
-| prefecture_id | integer | null: false |
-| city          | string  | null: false |
-| address       | string  | null: false |
-| building_name | string  |             |
-| phone_number  | string  | null: false |
-| user_id       | integer | null: false |
+| Column        | Type    | Options           |
+| ------------- | ------- | ----------------- |
+| postal_code   | string  | null: false       |
+| prefecture_id | integer | null: false       |
+| city          | string  | null: false       |
+| address       | string  | null: false       |
+| building_name | string  |                   |
+| phone_number  | string  | null: false       |
+| user_id       | integer | null: false       |
+| order_id      | integer | foreign_key: true |
 
 ### Association
 
@@ -105,6 +106,6 @@ Things you may want to cover:
 
 ### Association
 
-- has_one    :product
 - has_one    :sending_address
+- belongs_to :product
 - belongs_to :user

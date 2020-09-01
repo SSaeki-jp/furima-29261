@@ -49,6 +49,7 @@ Things you may want to cover:
 | Column                     | Type    | Options           |
 | -------------------------- | ------- | ----------------- |
 | name                       | string  | null: false       |
+| explanation                | text    | null: false       |
 | user_id                    | integer | foreign_key: true |
 | category_id                | integer | null: false       |
 | product_status_id          | integer | null: false       |
@@ -89,7 +90,6 @@ Things you may want to cover:
 | address       | string  | null: false       |
 | building_name | string  |                   |
 | phone_number  | string  | null: false       |
-| user_id       | integer | null: false       |
 | order_id      | integer | foreign_key: true |
 
 ### Association

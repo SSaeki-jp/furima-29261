@@ -5,7 +5,7 @@ class Product < ApplicationRecord
 
   # バリデーション
   validates :name, :explanation, :user_id, presence: true
-  # アクティブハッシュによるバリデーション
+  # アクティブハッシュのバリデーション
   validates :category_id, :product_status_id, :shipping_charges_id, 
             :prefecture_id, :estimated_shipping_date_id, numericality: { other_than: 1 }
 

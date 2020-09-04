@@ -8,6 +8,8 @@ class Product < ApplicationRecord
   # アクティブハッシュのバリデーション
   validates :category_id, :product_status_id, :shipping_charges_id, 
             :prefecture_id, :estimated_shipping_date_id, numericality: { other_than: 1 }
+  # 画像のバリデーション
+  validates :was_attached?, presence: true
 
   # アソシエーション
   has_many         :comments
@@ -18,5 +20,9 @@ class Product < ApplicationRecord
   # アクティブハッシュのアソシエーション
   belongs_to_active_hash :category_id, :product_status_id, :shipping_charges_id,
                           :prefecture_id, :estimated_shipping_date_id
+
+def was_attached?
+  self.image.attached?
+end
 
 end

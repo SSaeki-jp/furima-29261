@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        lastname_fullwidth_kanji: お名前（全角）姓
+        firstname_fullwidth_kanji: お名前（全角）名
+        lastname_fullwidth_katakana: お名前カナ（全角）姓
+        firstname_fullwidth_katakana: お名前カナ（全角）名
+        birthday: 生年月日
+      # tweet:
+      #   text: テキスト
+      #   image: 画像

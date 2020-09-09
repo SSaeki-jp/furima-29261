@@ -27,16 +27,16 @@ Things you may want to cover:
 
 ## Users テーブル
 
-| Column                       | Type   | Options     |
-| ---------------------------- | ------ | ----------- |
-| nickname                     | string | null: false |
-| email                        | string | null: false |
-| password                     | string | null: false |
-| lastname_fullwidth_kanji     | string | null: false |
-| firstname_fullwidth_kanji    | string | null: false |
-| lastname_fullwidth_katakana  | string | null: false |
-| firstname_fullwidth_katakana | string | null: false |
-| birthday                     | date   | null: false |
+| Column                       | Type     | Options     |
+| ---------------------------- | -------- | ----------- |
+| nickname                     | string   | null: false |
+| email                        | string   | null: false |
+| password                     | string   | null: false |
+| lastname_fullwidth_kanji     | string   | null: false |
+| firstname_fullwidth_kanji    | string   | null: false |
+| lastname_fullwidth_katakana  | string   | null: false |
+| firstname_fullwidth_katakana | string   | null: false |
+| birthday                     | datetime | null: false |
 
 ### Association
 

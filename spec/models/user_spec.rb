@@ -44,7 +44,7 @@ RSpec.describe User, type: :model do
         @user.password = '123456'
         @user.password_confirmation = '123456'
         @user.valid?
-        expect(@user.errors.full_messages).to include
+        expect(@user.errors.full_messages).to include('パスワードは英数字混在で入力してください')
       end
       it 'passwordが5文字以下だと登録できない' do
         @user.password = '123as'

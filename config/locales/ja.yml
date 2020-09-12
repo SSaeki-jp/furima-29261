@@ -2,12 +2,19 @@ ja:
   activerecord:
     attributes:
       user:
-        nickname: ニックネーム
-        lastname_fullwidth_kanji: お名前（全角）姓
-        firstname_fullwidth_kanji: お名前（全角）名
-        lastname_fullwidth_katakana: お名前カナ（全角）姓
+        nickname:                     ニックネーム
+        lastname_fullwidth_kanji:     お名前（全角）姓
+        firstname_fullwidth_kanji:    お名前（全角）名
+        lastname_fullwidth_katakana:  お名前カナ（全角）姓
         firstname_fullwidth_katakana: お名前カナ（全角）名
-        birthday: 生年月日
-      # tweet:
-      #   text: テキスト
-      #   image: 画像
+        birthday:                     生年月日
+      product:
+        image:                      出品画像
+        name:                       商品名
+        explanation:                商品の説明
+        category_id:                カテゴリー
+        product_status_id:          商品の状態
+        shipping_charges_id:        配送料の負担
+        prefecture_id:              発送元の地域
+        estimated_shipping_date_id: 発送までの日数
+        price:                      価格

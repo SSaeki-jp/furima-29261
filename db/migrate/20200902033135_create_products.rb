@@ -9,7 +9,7 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.integer :shipping_charges_id,        null: false
       t.integer :prefecture_id,              null: false
       t.integer :estimated_shipping_date_id, null: false
-      t.boolean :favorite_flag,              null: false
+      t.boolean :favorite_flag,              null: false, default: false
       t.integer :price,                      null: false
       t.timestamps
     end

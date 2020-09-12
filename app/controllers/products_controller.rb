@@ -20,14 +20,11 @@ class ProductsController < ApplicationController
   private
 
   def move_to_index
-    unless user_signed_in?
-      redirect_to new_user_session_path
-      # @@product = true
-    end
+    redirect_to new_user_session_path unless user_signed_in?
   end
 
   def product_params
     params.require(:product).permit(:image, :name, :explanation, :category_id, :product_status_id, :shipping_charges_id, \
-      :prefecture_id, :estimated_shipping_date_id, :price).merge(user_id: current_user.id)
+                                    :prefecture_id, :estimated_shipping_date_id, :price).merge(user_id: current_user.id)
   end
 end

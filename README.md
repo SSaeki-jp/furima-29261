@@ -53,7 +53,7 @@ Things you may want to cover:
 | user_id                    | integer | foreign_key: true |
 | category_id                | integer | null: false       |
 | product_status_id          | integer | null: false       |
-| shipping_charges_id        | integer | null: false       |
+| shipping_charge_id         | integer | null: false       |
 | prefecture_id              | integer | null: false       |
 | estimated_shipping_date_id | integer | null: false       |
 | price                      | integer | null: false       |

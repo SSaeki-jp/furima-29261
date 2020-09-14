@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 2020_09_10_103640) do
     t.integer "shipping_charges_id", null: false
     t.integer "prefecture_id", null: false
     t.integer "estimated_shipping_date_id", null: false
-    t.boolean "favorite_flag", default: false, null: false
     t.integer "price", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

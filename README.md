@@ -56,7 +56,6 @@ Things you may want to cover:
 | shipping_charges_id        | integer | null: false       |
 | prefecture_id              | integer | null: false       |
 | estimated_shipping_date_id | integer | null: false       |
-| favorite_flag              | boolean | null: false       |
 | price                      | integer | null: false       |
 
 ### Association

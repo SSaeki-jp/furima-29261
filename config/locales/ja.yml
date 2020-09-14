@@ -14,7 +14,7 @@ ja:
         explanation:                商品の説明
         category_id:                カテゴリー
         product_status_id:          商品の状態
-        shipping_charge_id:        配送料の負担
+        shipping_charge_id:         配送料の負担
         prefecture_id:              発送元の地域
         estimated_shipping_date_id: 発送までの日数
         price:                      価格

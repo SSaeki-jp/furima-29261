@@ -15,5 +15,9 @@ class Product < ApplicationRecord
   # 画像保存のアソシエーション
   has_one_attached :image
   # アクティブハッシュのアソシエーション
-  belongs_to_active_hash :category, :product_status, :shipping_charge, :prefecture, :estimated_shipping_date
+  belongs_to_active_hash :category
+  belongs_to_active_hash :product_status
+  belongs_to_active_hash :shipping_charge
+  belongs_to_active_hash :prefecture
+  belongs_to_active_hash :estimated_shipping_date
 end

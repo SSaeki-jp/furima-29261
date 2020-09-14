@@ -18,6 +18,10 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show
+    @product = Product.find(params[:id])
+  end
+
   private
 
   def move_to_index
@@ -25,7 +29,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:image, :name, :explanation, :category_id, :product_status_id, :shipping_charges_id, \
+    params.require(:product).permit(:image, :name, :explanation, :category_id, :product_status_id, :shipping_charge_id, \
                                     :prefecture_id, :estimated_shipping_date_id, :price).merge(user_id: current_user.id)
   end
 end

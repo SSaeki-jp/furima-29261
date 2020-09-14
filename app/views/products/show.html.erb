@@ -4,19 +4,21 @@
 <div class="item-show">
   <div class="item-box">
     <h2 class="name">
-      <%= "商品名" %>
+      <%= @product.name %>
     </h2>
     <div class='item-img-content'>
-      <%= image_tag "item-sample.png" ,class:"item-box-img" %>
+      <%= image_tag @product.image ,class:"item-box-img" %>
+
       <%# 商品が売れている場合は、sold outの表示をしましょう。 %>
-      <div class='sold-out'>
-        <span>Sold Out!!</span>
-      </div>
+      <%# <div class='sold-out'> %>
+        <%# <span>Sold Out!!</span> %>
+      <%# </div> %>
       <%# //商品が売れている場合は、sold outの表示をしましょう。 %>
+
     </div>
     <div class="item-price-box">
       <span class="item-price">
-        ¥ 999,999,999
+        <%= "¥ #{@product.price.to_s(:delimited, delimiter: ',')}" %>
       </span>
       <span class="item-postage">
         (税込) 送料込み
@@ -42,27 +44,27 @@
       <tbody>
         <tr>
           <th class="detail-item">出品者</th>
-          <td class="detail-value"><%= "出品者名" %></td>
+          <td class="detail-value"><%= @product.user.nickname %></td>
         </tr>
         <tr>
           <th class="detail-item">カテゴリー</th>
-          <td class="detail-value"><%= "カテゴリー名" %></td>
+          <td class="detail-value"><%= @product.category.name %></td>
         </tr>
         <tr>
           <th class="detail-item">商品の状態</th>
-          <td class="detail-value"><%= "商品の状態" %></td>
+          <td class="detail-value"><%= @product.product_status.name %></td>
         </tr>
         <tr>
           <th class="detail-item">配送料の負担</th>
-          <td class="detail-value"><%= "発送料の負担" %></td>
+          <td class="detail-value"><%= @product.shipping_charge.name %></td>
         </tr>
         <tr>
           <th class="detail-item">発送元の地域</th>
-          <td class="detail-value"><%= "発送元の地域" %></td>
+          <td class="detail-value"><%= @product.prefecture.name %></td>
         </tr>
         <tr>
           <th class="detail-item">発送日の目安</th>
-          <td class="detail-value"><%= "発送日の目安" %></td>
+          <td class="detail-value"><%= @product.estimated_shipping_date.name %></td>
         </tr>
       </tbody>
     </table>

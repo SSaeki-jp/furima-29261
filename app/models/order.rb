@@ -1,5 +1,6 @@
 class Order < ApplicationRecord
   # アソシエーション
   has_one    :sending_address
-  belongs_to :product, :user
+  belongs_to :user
+  belongs_to :product
 end

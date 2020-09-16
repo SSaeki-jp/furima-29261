@@ -46,17 +46,17 @@ Things you may want to cover:
 
 ## Products テーブル
 
-| Column                     | Type    | Options           |
-| -------------------------- | ------- | ----------------- |
-| name                       | string  | null: false       |
-| explanation                | text    | null: false       |
-| user_id                    | integer | foreign_key: true |
-| category_id                | integer | null: false       |
-| product_status_id          | integer | null: false       |
-| shipping_charge_id         | integer | null: false       |
-| prefecture_id              | integer | null: false       |
-| estimated_shipping_date_id | integer | null: false       |
-| price                      | integer | null: false       |
+| Column                     | Type       | Options           |
+| -------------------------- | ---------- | ----------------- |
+| name                       | string     | null: false       |
+| explanation                | text       | null: false       |
+| user_id                    | references | foreign_key: true |
+| category_id                | integer    | null: false       |
+| product_status_id          | integer    | null: false       |
+| shipping_charge_id         | integer    | null: false       |
+| prefecture_id              | integer    | null: false       |
+| estimated_shipping_date_id | integer    | null: false       |
+| price                      | integer    | null: false       |
 
 ### Association
 
@@ -81,15 +81,15 @@ Things you may want to cover:
 
 ## SendingAddress テーブル
 
-| Column        | Type    | Options           |
-| ------------- | ------- | ----------------- |
-| postal_code   | string  | null: false       |
-| prefecture_id | integer | null: false       |
-| city          | string  | null: false       |
-| address       | string  | null: false       |
-| building_name | string  |                   |
-| phone_number  | string  | null: false       |
-| order_id      | integer | foreign_key: true |
+| Column        | Type       | Options           |
+| ------------- | ---------- | ----------------- |
+| postal_code   | string     | null: false       |
+| prefecture_id | integer    | null: false       |
+| city          | string     | null: false       |
+| address       | string     | null: false       |
+| building_name | string     |                   |
+| phone_number  | string     | null: false       |
+| order_id      | references | foreign_key: true |
 
 ### Association
 
@@ -98,10 +98,10 @@ Things you may want to cover:
 
 ## Orders テーブル
 
-| Column             | Type    | Options           |
-| ------------------ | ------- | ----------------- |
-| user_id            | integer | foreign_key: true |
-| product_id         | integer | foreign_key: true |
+| Column             | Type       | Options           |
+| ------------------ | ---------- | ----------------- |
+| user_id            | references | foreign_key: true |
+| product_id         | references | foreign_key: true |
 
 ### Association
 

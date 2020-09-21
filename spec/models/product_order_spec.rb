@@ -54,7 +54,7 @@ RSpec.describe ProductOrder, type: :model do
         @product_order.valid?
         expect(@product_order.errors.full_messages).to include('都道府県を選択してください')
       end
-      
+
       it 'cityが空だと保存できない' do
         @product_order.city = ''
         @product_order.valid?

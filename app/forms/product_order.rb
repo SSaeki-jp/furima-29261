@@ -9,7 +9,7 @@ class ProductOrder
   validates :prefecture_id, numericality: { other_than: 1, message: 'を選択してください' }
   validates :city, :address, presence: true
   PHONE_NUMBER_REGEX = /\A[0-9]+\z/.freeze
-  validates :phone_number, presence: true, format: {with: PHONE_NUMBER_REGEX, message: 'は半角数字で入力してください' }
+  validates :phone_number, presence: true, format: { with: PHONE_NUMBER_REGEX, message: 'は半角数字で入力してください' }
 
   def save
     order = Order.create(user_id: user_id, product_id: product_id)

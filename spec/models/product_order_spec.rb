@@ -72,15 +72,20 @@ RSpec.describe ProductOrder, type: :model do
         @product_order.valid?
         expect(@product_order.errors.full_messages).to include('電話番号を入力してください')
       end
+      it 'phone_numberが12桁以上だと保存できない' do
+        @product_order.phone_number = '012345678912'
+        @product_order.valid?
+        expect(@product_order.errors.full_messages).to include('電話番号は半角数字の11桁以内で入力してください')
+      end
       it 'phone_numberが半角数字以外だと保存できない' do
         @product_order.phone_number = '０１２３４５６７８９'
         @product_order.valid?
-        expect(@product_order.errors.full_messages).to include('電話番号は半角数字で入力してください')
+        expect(@product_order.errors.full_messages).to include('電話番号は半角数字の11桁以内で入力してください')
       end
       it 'phone_numberに記号が含まれていると保存できない' do
         @product_order.phone_number = '012-345-678'
         @product_order.valid?
-        expect(@product_order.errors.full_messages).to include('電話番号は半角数字で入力してください')
+        expect(@product_order.errors.full_messages).to include('電話番号は半角数字の11桁以内で入力してください')
       end
     end
   end

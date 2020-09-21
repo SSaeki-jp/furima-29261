@@ -11,8 +11,6 @@ class ProductOrder
   PHONE_NUMBER_REGEX = /\A\d{10,11}\z/.freeze
   validates :phone_number, presence: true, format: { with: PHONE_NUMBER_REGEX, message: 'は半角数字の11桁以内で入力してください' }
 
-  # validates :phone_number, presence: true, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 99_999_999_999 }
-
   def save
     order = Order.create(user_id: user_id, product_id: product_id)
     SendingAddress.create(postal_code: postal_code, prefecture_id: prefecture_id, city: city, address: address, \

@@ -1,13 +1,12 @@
 class OrdersController < ApplicationController
   before_action :move_to_index
+  before_action :set_product, only: [:index, :create]
 
   def index
-    @product = Product.find(params[:product_id])
     @product_order = ProductOrder.new
   end
 
   def create
-    @product = Product.find(params[:product_id])
     @product_order = ProductOrder.new(order_params)
     if @product_order.valid?
       pay_item
@@ -22,6 +21,10 @@ class OrdersController < ApplicationController
 
   def move_to_index
     redirect_to new_user_session_path unless user_signed_in?
+  end
+
+  def set_product
+    @product = Product.find(params[:product_id])
   end
 
   def order_params

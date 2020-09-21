@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
-  before_action :move_to_index
+  before_action :move_to_user_session
   before_action :set_product, only: [:index, :create]
+  before_action :move_to_product_index, only: [:index, :create]
 
   def index
     @product_order = ProductOrder.new
@@ -19,12 +20,16 @@ class OrdersController < ApplicationController
 
   private
 
-  def move_to_index
+  def move_to_user_session
     redirect_to new_user_session_path unless user_signed_in?
   end
 
   def set_product
     @product = Product.find(params[:product_id])
+  end
+
+  def move_to_product_index
+    redirect_to root_path if current_user.id == @product.user_id
   end
 
   def order_params

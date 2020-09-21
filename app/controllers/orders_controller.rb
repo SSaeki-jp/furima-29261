@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :move_to_user_session
   before_action :set_product, only: [:index, :create]
   before_action :move_to_product_index, only: [:index, :create]
+  before_action :is_order_move_to_product_index, only: [:index, :create]
 
   def index
     @product_order = ProductOrder.new
@@ -30,6 +31,10 @@ class OrdersController < ApplicationController
 
   def move_to_product_index
     redirect_to root_path if current_user.id == @product.user_id
+  end
+
+  def is_order_move_to_product_index
+    redirect_to root_path if @product.order.present?
   end
 
   def order_params

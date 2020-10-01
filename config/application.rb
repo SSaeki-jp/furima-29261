@@ -12,6 +12,9 @@ module Furima29261
     config.load_defaults 6.0
     config.i18n.default_locale = :ja
 
+    # エラー時のfield_with_errorsタグ出力を停止したい場合は以下のコメントを外すこと（Railsのエラー強調機能も失われるので注意！）
+    # config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

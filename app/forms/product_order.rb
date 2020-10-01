@@ -1,6 +1,6 @@
 class ProductOrder
   include ActiveModel::Model
-  attr_accessor :token, :postal_code, :prefecture_id, :city, :address, :building_name, :phone_number, :user_id, :product_id
+  attr_accessor :authenticity_token, :token, :postal_code, :prefecture_id, :city, :address, :building_name, :phone_number, :user_id, :product_id
 
   # バリデーション
   validates :token, presence: true

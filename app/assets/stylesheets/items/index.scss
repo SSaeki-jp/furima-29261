@@ -260,6 +260,12 @@ a {
   height: 33vh;
 }
 
+// 商品出品と編集のみ
+.img-upload .item-img {
+  width: 15vh;
+  height: 15vh;
+}
+
 .sold-out {
   position: absolute;
   top: 40%;

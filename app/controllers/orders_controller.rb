@@ -11,9 +11,11 @@ class OrdersController < ApplicationController
   def create
     @product_order = ProductOrder.new(order_params)
     if @product_order.valid?
+    # if card.save
       pay_item
       @product_order.save
       redirect_to root_path
+    # end
     else
       render :index
     end
@@ -48,5 +50,18 @@ class OrdersController < ApplicationController
       card: order_params[:token],
       currency: 'jpy'
     )
+
+    # トークン化したクレカ情報を、ユーザに紐づけて保存しておく場合
+    # Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    # customer = Payjp::Customer.create(
+    #   description: 'test',
+    #   card: params[:card_token]
+    # )
+    # card = Card.new( # トークン化されたカード情報を保存する
+    #   card_token: params[:card_token], # カードトークン
+    #   customer_token: customer.id, # 顧客トークン
+    #   user_id: current_user.id # ログインしているユーザー
+    # )
+
   end
 end

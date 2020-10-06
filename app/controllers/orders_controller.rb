@@ -63,5 +63,17 @@ class OrdersController < ApplicationController
     #   user_id: current_user.id # ログインしているユーザー
     # )
 
+    # Userコントローラに記載する内容（あくまでマイページに表示させる処理のみを記述しているため、updateアクションなどは省略）
+    # def show
+    #   Payjp.api_key = ENV["PAYJP_SECRET_KEY"] # 環境変数を読み込む
+    #   card = Card.find_by(user_id: current_user.id) # ユーザーのid情報を元に、カード情報を取得
+
+    # もしカード情報が存在していなかったら、カード入力画面にとばしてカード情報を入力させる（カード入力画面へ飛ばすかどうかは場合による）
+    #   redirect_to new_card_path and return unless card.present?
+
+    #   customer = Payjp::Customer.retrieve(card.customer_token) # 先程のカード情報を元に、顧客情報を取得
+    #   @card = customer.cards.first
+    # end
+
   end
 end

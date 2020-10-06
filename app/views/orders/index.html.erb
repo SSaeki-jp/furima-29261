@@ -76,6 +76,23 @@
     </div>
     <%# /カード情報の入力 %>
 
+    <%# もしカード情報をPAYJPの顧客IDから取得する場合は以下を追記（要編集） %>
+    <div class="Card__title">
+      <h2>カード情報<h2>
+    </div>
+    <div class="Card_info">
+      【カード番号】
+      <br>
+      <%= "**** **** **** " + @card[:last4] %> <%# カード番号の下4桁を取得 %>
+      <br>
+      【有効期限】
+      <br>
+      <%= @card[:exp_month] %> <%# 有効期限の「月」を取得 %>
+      /
+      <%= @card[:exp_year] %> <%# 有効期限の「年」を取得 %>
+    </div>
+    <%# /もしカード情報をPAYJPの顧客IDから取得する場合は以下を追記（要編集） %>
+
     <%# 配送先の入力 %>
     <div class='shipping-address-form'>
       <h1 class='info-input-haedline'>
